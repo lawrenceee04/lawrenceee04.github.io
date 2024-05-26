@@ -1,14 +1,40 @@
+body {
+    color: white;
+    font-family: Cabin;
+    background-color: #006cffff;
+}
+div {
+    padding: 10px;
+    margin-top: 50%;
+    margin-bottom: 50%;
+    text-align: center;
+}
+
+button {
+    background-color: #ffffffe8;
+    color: #006cffff;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 16%;
+    border-radius: 5px;
+}
+
+h1 {
+    text-align: center;
+}
 .navbar {
     display: flex;
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #006cffff;
 }
 
 .navbar li {
-    float: right;
+    float: left;
 }
 
 .navbar li a {
@@ -20,5 +46,5 @@
 }
 
 .navbar li a:hover {
-    background-color: #948787;
+    background-color: #2a324de8;
 }
