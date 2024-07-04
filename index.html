@@ -4,16 +4,51 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="icon" type="image/png" href="favicon.png">
+        <script src="script.js"></script>
     </head>
     <body>
         <nav>
             <ul class="navbar">
-                <li><a href="https://youtu.be/dQw4w9WgXcQ?si=BC00jSwc5LqieFS4" target="_blank">Contacts</a></li>
+                <li>Socials</li>
+                <li>Hobbies</li>
             </ul>
         </nav>
-        <div>
-            <h1>Wait! Wala pa laman...</h1>
-            <button onclick="window.open('https://youtu.be/dQw4w9WgXcQ?si=BC00jSwc5LqieFS4', '_blank')">DON'T CLICK...</button>
-        </div>
+
+        <header class="greeting_div">
+            <h1 class ="greeting">Hi!</h1>
+        </header>
+
+        <section class="recent_act">
+            <h2>Recent Activities</h2>
+            <div class="flex_container">
+                <div class="recent_act_item">
+                    <div class="recent_act_item_pic_holder">
+                        <img class="recent_act_item_pic" src="media/picture/pic_2.jpg">
+                    </div>
+                    <div class="recent_act_item_title">PRESS 2024</div>
+                    <div class="recent_act_item_desc">
+                        <p>The <a onclick="FRS()">FEATI Railway Society</a> participated in the 1st Philippine Railway Engineering Student Summit <i>(PRESS 2024)</i>.</p>
+                    </div>
+                </div>
+                <div class="recent_act_item">
+                    <div class="recent_act_item_pic_holder">
+                        <img class="recent_act_item_pic" src="media/picture/pic_1.jpg">
+                    </div>
+                    <div class="recent_act_item_title">LRT Line 2</div>
+                    <div class="recent_act_item_desc">
+                        <p><a onclick="FRS()">FEATI Railway Society</a> students were given a rare opportunity to see different parts of the LRT Line 2 Depot such as the Light and Heavy Maintenance, and Operation Control Center.<p>
+                    </div>
+                </div>
+                <div class="recent_act_item">
+                    <div class="recent_act_item_pic_holder">
+                        <img class="recent_act_item_pic" src="media/picture/pic_0.jpg">
+                    </div>
+                    <div class="recent_act_item_title">DOST-MRIDC</div>
+                    <div class="recent_act_item_desc">
+                        <p><a onclick="FRS()">FEATI Railway Society</a> students had the opportunity to visit the Department of Science and Technology <i>(DOST)</i> Metals Industry Research and Development Center <i>(MRIDC)</i>.<p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </body>
 </html>

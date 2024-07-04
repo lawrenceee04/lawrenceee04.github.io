@@ -2,12 +2,62 @@ body {
     color: white;
     font-family: Cabin;
     background-color: #006cffff;
+    max-height: 1000px;
 }
-div {
+.greeting_div {
     padding: 10px;
-    margin-top: 50%;
-    margin-bottom: 50%;
     text-align: center;
+}
+
+.recent_act {
+    margin: 0px 0px 0px 20px;
+    font-weight: bold;
+}
+
+.flex_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.recent_act_item {
+    margin: 10px;
+    padding: 20px;
+    min-height: 250px;
+    max-height: auto;
+    min-width: 350px;
+    max-width: 600px;
+    background-color: #1136b1bc;
+    border-radius: 5px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.recent_act_item_pic_holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.recent_act_item_pic {
+    min-width: 350px;
+    max-width: 400px;
+    min-height: 100px;
+    max-height: 240px;
+    border-radius: 5px;
+}
+
+.recent_act_item_title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.recent_act_item_desc{
+    font-size: 14px;
 }
 
 button {
@@ -24,7 +74,19 @@ button {
 
 h1 {
     text-align: center;
+    font-size: 50px;
 }
+
+a {
+    color: rgb(77, 255, 249);
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #006cffff;
+    text-decoration: underline;
+}
+
 .navbar {
     display: flex;
     list-style-type: none;
@@ -34,11 +96,11 @@ h1 {
     background-color: #006cffff;
 }
 
-.navbar li {
-    float: left;
+.navbar:hover {
+    background-color: rgb(0, 123, 255);
 }
 
-.navbar li a {
+.navbar li {
     display: block;
     color: white;
     text-align: center;
@@ -47,6 +109,6 @@ h1 {
     border-radius: 5px;
 }
 
-.navbar li a:hover {
+.navbar li:hover {
     background-color: #2a324de8;
 }
