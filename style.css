@@ -10,7 +10,7 @@ body {
 }
 
 .recent_act {
-    margin: 0px 0px 0px 20px;
+    margin: 0px 20px 0px 20px;
     font-weight: bold;
 }
 
@@ -94,10 +94,6 @@ a:hover {
     padding: 0;
     overflow: hidden;
     background-color: #006cffff;
-}
-
-.navbar:hover {
-    background-color: rgb(0, 123, 255);
 }
 
 .navbar li {
