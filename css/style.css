@@ -46,7 +46,7 @@ body {
 }
 
 .recent_act_item_pic {
-    min-width: 350px;
+    min-width: 200px;
     max-width: 400px;
     min-height: 100px;
     max-height: 240px;
