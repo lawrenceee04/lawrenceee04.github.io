@@ -13,3 +13,7 @@ function Instagram() {
 function LinkedIn() {
   window.open('https://www.linkedin.com/in/lawrence-garcia-a076b1208/', '_blank');
 }
+
+function Github() {
+  window.open('https://github.com/lawrenceee04', '_blank');
+}
