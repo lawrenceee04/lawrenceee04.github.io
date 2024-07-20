@@ -4,7 +4,6 @@ body {
     color: white;
     font-family: Cabin;
     background-color: #006cffff;
-    max-height: 1000px;
 }
 .greeting_div {
     padding: 10px;
@@ -13,6 +12,10 @@ body {
 
 .recent_act {
     margin: 0px 20px 0px 20px;
+}
+
+.recent_act_item_title {
+    font-size: 20px;
     font-weight: bold;
 }
 
