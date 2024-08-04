@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap");
 
 body {
-  color: rgb(0, 0, 0);
+  color: white;
   font-family: Cabin;
-  background-color: rgb(255, 255, 255);
+  background-color: #006cffff;
 }
 .greeting_div {
   padding: 10px;
@@ -33,7 +33,7 @@ body {
   max-height: auto;
   min-width: 250px;
   max-width: 600px;
-  background-color: #575858cb;
+  background-color: #1136b1bc;
   border-radius: 5px;
   width: 30%;
   display: flex;
@@ -62,7 +62,7 @@ body {
 }
 
 .recent_act_item_desc {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 button {
@@ -83,13 +83,12 @@ h1 {
 }
 
 .recent_act_item_desc a {
-  font-weight: bold;
-  color: rgb(0, 0, 0);
+  color: rgb(77, 255, 249);
   text-decoration: underline;
 }
 
 a:hover {
-  color: rgb(0, 4, 255);
+  color: #006cffff;
   text-decoration: underline;
 }
 
@@ -99,6 +98,7 @@ a:hover {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  background-color: #006cffff;
 }
 
 .navbar li {
@@ -111,12 +111,12 @@ a:hover {
 }
 
 .navbar li a {
-  color: rgb(0, 0, 0);
+  color: white;
   text-decoration: none;
 }
 
 .navbar li:hover {
-  background-color: #5e5e5ee8;
+  background-color: #2a324de8;
 }
 
 /* Socials */
@@ -135,7 +135,7 @@ a:hover {
   max-height: 100px;
   min-width: 210px;
   max-width: 500px;
-  background-color: #4c4d5e6b;
+  background-color: #1136b1bc;
   border-radius: 50px;
   display: flex;
   flex-direction: row;
@@ -153,8 +153,8 @@ a:hover {
 }
 
 footer {
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
+  background-color: #006cffff;
+  color: white;
   text-align: center;
   padding: 0px;
   position: fixed;
