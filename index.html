@@ -126,7 +126,7 @@
 
   <!-- Footer -->
   <footer class="text-center m-4">
-    <p>&copy; 2024 Lawrence Garcia. All Rights Reserved.</p>
+    <p id="year"></p>
     <p>
       Made with
       <a href="https://getbootstrap.com/" class="link-info" target="_blank">Bootstrap</a>, <a
@@ -157,6 +157,12 @@
       }
     );
   </script>
+
+  <script>
+    const currentYear = new Date().getFullYear();
+    document.getElementById("year").innerHTML = "&copy; " + currentYear + " Lawrence Garcia. All Rights Reserved.";
+  </script>
+
 </body>
 
 </html>
