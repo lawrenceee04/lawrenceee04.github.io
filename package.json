@@ -15,8 +15,6 @@
   "dependencies": {
     "@netlify/functions": "^3.0.0",
     "@tailwindcss/vite": "^4.0.3",
-    "dotenv": "^16.4.7",
-    "node-fetch": "^3.3.2",
     "octokit": "^4.1.0",
     "tailwindcss": "^4.0.3"
   }
