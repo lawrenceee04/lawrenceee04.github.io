@@ -1,3 +1,5 @@
+import fetch from 'node-fetch';
+
 export const handler = async (event) => {
     const profileIdentifier = event.headers.profileidentifier;
     const apiKey = process.env.VITE_GRAVATAR_API_KEY;
