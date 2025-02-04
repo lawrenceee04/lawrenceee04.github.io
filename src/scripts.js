@@ -71,38 +71,40 @@ const getGitHubRepos = async () => {
 
 getGitHubRepos().then((repos) => {
     repos.forEach((repo, index) => {
-        const card = document.createElement('a');
-        // set attributes
-        card.id = `repo-${index}`;
-        card.href = repo.html_url;
-        card.className = 'text-xl font-bold p-4 border rounded h-52 md:h-48 overflow-hidden shadow-md';
-        card.target = '_blank';
+        if (repo.visibility === 'public') {
+            const card = document.createElement('a');
+            // set attributes
+            card.id = `repo-${index}`;
+            card.href = repo.html_url;
+            card.className = 'text-xl font-bold p-4 border rounded h-52 md:h-48 overflow-hidden shadow-md';
+            card.target = '_blank';
 
-        const textDiv = document.createElement('div');
-        textDiv.className = 'flex items-center gap-3';
+            const textDiv = document.createElement('div');
+            textDiv.className = 'flex items-center gap-3';
 
-        const repoNameDiv = document.createElement('div');
-        repoNameDiv.className = 'text-lg font-bold';
-        const repoNameText = document.createTextNode(repo.name);
-        repoNameDiv.appendChild(repoNameText);
+            const repoNameDiv = document.createElement('div');
+            repoNameDiv.className = 'text-lg font-bold';
+            const repoNameText = document.createTextNode(repo.name);
+            repoNameDiv.appendChild(repoNameText);
 
-        const repoTypeDiv = document.createElement('div');
-        repoTypeDiv.className = 'text-xs font-light border rounded-full py-1 px-2';
-        const repoTypeText = document.createTextNode(repo.visibility);
-        repoTypeDiv.appendChild(repoTypeText);
+            const repoTypeDiv = document.createElement('div');
+            repoTypeDiv.className = 'text-xs font-light border rounded-full py-1 px-2';
+            const repoTypeText = document.createTextNode(repo.visibility);
+            repoTypeDiv.appendChild(repoTypeText);
 
-        const descriptionDiv = document.createElement('div');
-        descriptionDiv.className = 'text-lg font-medium';
-        const descriptionText = document.createTextNode(repo.description ? repo.description : 'N/A');
-        descriptionDiv.appendChild(descriptionText);
+            const descriptionDiv = document.createElement('div');
+            descriptionDiv.className = 'text-lg font-medium';
+            const descriptionText = document.createTextNode(repo.description ? repo.description : 'N/A');
+            descriptionDiv.appendChild(descriptionText);
 
-        textDiv.appendChild(repoNameDiv);
-        textDiv.appendChild(repoTypeDiv);
+            textDiv.appendChild(repoNameDiv);
+            textDiv.appendChild(repoTypeDiv);
 
-        card.appendChild(textDiv);
-        card.appendChild(descriptionDiv);
+            card.appendChild(textDiv);
+            card.appendChild(descriptionDiv);
 
-        const reposList = document.getElementById('repos-list');
-        reposList.appendChild(card);
+            const reposList = document.getElementById('repos-list');
+            reposList.appendChild(card);
+        }
     });
 });
