@@ -1,19 +1,18 @@
-export const handler = async (event, context) => {
+export const handler = async (event) => {
     const profileIdentifier = event.headers.profileidentifier;
-    const apiKey = process.env.GRAVATAR_API_KEY;
+    const apiKey = process.env.VITE_GRAVATAR_API_KEY;
 
     try {
         const response = await fetch(`https://api.gravatar.com/v3/profiles/${profileIdentifier}`, {
             method: 'GET',
             headers: {
-                Authorization: apiKey,
+                Authorization: `Bearer ${apiKey}`,
             },
         });
         const data = await response.json();
-        const avatar_url = `${data.avatar_url}?s=200`;
         return {
             statusCode: 200,
-            body: JSON.stringify({ avatar_url }),
+            body: JSON.stringify(data),
         };
     } catch (error) {
         return {
