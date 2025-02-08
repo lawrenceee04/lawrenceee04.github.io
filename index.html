@@ -23,39 +23,65 @@
         </header>
 
         <section class="place-self-center justify-start w-sm sm:w-5xl flex flex-col gap-4 mt-20">
-            <div id="whoami" class="flex flex-col gap-4 border p-4 rounded text-center items-center">
+            <div id="whoami" class="flex flex-col gap-4 border p-4 rounded text-center items-center shadow-md">
                 <div class="text-2xl">whoami</div>
                 <img id="gravatar-avatar" class="w-1/2 md:w-1/4 rounded" alt="Lawrence Garcia's avatar" />
                 <div class="text-2xl font-bold self-center">Hi, I am Lawrence Garcia</div>
             </div>
 
-            <div id="motto" class="flex flex-col border p-4 rounded text-center">
+            <div id="motto" class="flex flex-col border p-4 rounded text-center shadow-md">
                 <div class="text-2xl">motto</div>
                 <div class="text-xl font-bold p-10">"Learning is a never ending journey"</div>
             </div>
         </section>
 
         <!-- Socials -->
-        <section id="socials" class="flex flex-col text-center border-t border-b p-5 my-5">
+        <section id="socials" class="flex flex-col text-center border-t border-b p-5 my-4 shadow-md">
             <div class="text-2xl">socials</div>
-
+            <div class="text-xs font-light italic">swipe left and right</div>
             <div
                 id="socials-list"
                 class="flex overflow-x-auto no-scrollbar scrolling-auto snap-x snap-mandatory gap-14 place-self-center text-center scroll-smooth w-3/4 h-32 m-4"></div>
         </section>
 
-        <section class="place-self-center justify-start w-sm sm:w-5xl flex flex-col gap-4">
-            <div id="projects" class="flex flex-col gap-4 border p-4 rounded text-center items-center">
+        <section class="place-self-center justify-start w-sm sm:w-4/5 flex flex-col md:flex-row gap-4 mb-4">
+            <!-- Certifications -->
+            <div id="motto" class="flex flex-col border p-4 rounded text-center items-center md:w-3/10 shadow-md">
+                <div class="text-2xl">certifications</div>
+                <div class="flex flex-col my-2">
+                    <div id="badges">
+                        <div
+                            id="badge-0"
+                            data-iframe-width="360"
+                            data-iframe-height="270"
+                            data-share-badge-id="386cce1d-5aa2-4dc0-a681-5f41fb99a0c3"
+                            data-share-badge-host="https://www.credly.com"></div>
+                        <div
+                            id="badge-1"
+                            data-iframe-width="360"
+                            data-iframe-height="270"
+                            data-share-badge-id="675740d2-24d1-49ce-8636-93ac6d23b509"
+                            data-share-badge-host="https://www.credly.com"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects -->
+            <div
+                id="projects"
+                class="flex flex-col gap-4 border p-4 rounded text-center items-center md:w-7/10 shadow-md">
                 <div class="text-2xl">projects</div>
                 <div id="repos-list" class="grid grid-cols-1 md:grid-cols-3 self-stretch gap-4 text-start"></div>
             </div>
-
-            <div id="motto" class="flex flex-col border p-4 rounded text-center">
-                <div class="text-2xl">certifications</div>
-                <div class="text-xl font-bold p-10"></div>
-            </div>
         </section>
+
+        <footer>
+            <div class="flex flex-col text-center border-t shadow-md bg-gray-800 text-white">
+                <div id="copyright" class="text-xl font-light p-5"></div>
+            </div>
+        </footer>
     </body>
 
     <script src="./src/scripts.js" type="module"></script>
+    <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
 </html>

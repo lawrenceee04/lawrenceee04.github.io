@@ -45,7 +45,7 @@ getVerifiedAccounts('lawrencegarciaaa').then((verifiedAccounts) => {
         card.href = account.url;
         card.target = '_blank';
         card.className =
-            'flex flex-col snap-center border shrink-0 w-full sm:w-1/4 justify-center items-center text-lg md:text-2xl rounded';
+            'flex flex-col snap-center border shrink-0 w-full sm:w-1/4 justify-center items-center text-lg md:text-2xl rounded hover:bg-sky-300 hover:drop-shadow-sm hover:text-2xl transition-transform';
         card.id = `social-${index}`;
 
         // set text
@@ -59,9 +59,15 @@ getVerifiedAccounts('lawrencegarciaaa').then((verifiedAccounts) => {
 });
 
 // GitHub Repositories
-const getGitHubRepos = async () => {
+const getGitHubRepos = async (numOfRepos) => {
     try {
-        const response = await fetch('/.netlify/functions/githubAPI');
+        const response = await fetch('/.netlify/functions/githubAPI', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                numOfRepos: numOfRepos,
+            },
+        });
         const data = await response.json();
         return data;
     } catch (error) {
@@ -69,40 +75,46 @@ const getGitHubRepos = async () => {
     }
 };
 
-getGitHubRepos().then((repos) => {
+getGitHubRepos(3).then((repos) => {
     repos.forEach((repo, index) => {
-        const card = document.createElement('a');
-        // set attributes
-        card.id = `repo-${index}`;
-        card.href = repo.html_url;
-        card.className = 'text-xl font-bold p-4 border rounded h-52 md:h-48 overflow-hidden shadow-md';
-        card.target = '_blank';
+        if (repo.visibility === 'public' && repo.fork === false) {
+            const card = document.createElement('a');
+            // set attributes
+            card.id = `repo-${index}`;
+            card.href = repo.html_url;
+            card.className =
+                'text-xl font-bold p-4 border rounded h-52 md:h-48 overflow-hidden shadow-md hover:bg-sky-300 hover:drop-shadow-sm transition-transform';
+            card.target = '_blank';
 
-        const textDiv = document.createElement('div');
-        textDiv.className = 'flex items-center gap-3';
+            const textDiv = document.createElement('div');
+            textDiv.className = 'flex items-center gap-3';
 
-        const repoNameDiv = document.createElement('div');
-        repoNameDiv.className = 'text-lg font-bold';
-        const repoNameText = document.createTextNode(repo.name);
-        repoNameDiv.appendChild(repoNameText);
+            const repoNameDiv = document.createElement('div');
+            repoNameDiv.className = 'text-lg font-bold';
+            const repoNameText = document.createTextNode(repo.name);
+            repoNameDiv.appendChild(repoNameText);
 
-        const repoTypeDiv = document.createElement('div');
-        repoTypeDiv.className = 'text-xs font-light border rounded-full py-1 px-2';
-        const repoTypeText = document.createTextNode(repo.visibility);
-        repoTypeDiv.appendChild(repoTypeText);
+            const repoTypeDiv = document.createElement('div');
+            repoTypeDiv.className = 'text-xs font-light border rounded-full py-1 px-2';
+            const repoTypeText = document.createTextNode(repo.visibility);
+            repoTypeDiv.appendChild(repoTypeText);
 
-        const descriptionDiv = document.createElement('div');
-        descriptionDiv.className = 'text-lg font-medium';
-        const descriptionText = document.createTextNode(repo.description ? repo.description : 'N/A');
-        descriptionDiv.appendChild(descriptionText);
+            const descriptionDiv = document.createElement('div');
+            descriptionDiv.className = 'text-lg font-medium';
+            const descriptionText = document.createTextNode(repo.description ? repo.description : 'N/A');
+            descriptionDiv.appendChild(descriptionText);
 
-        textDiv.appendChild(repoNameDiv);
-        textDiv.appendChild(repoTypeDiv);
+            textDiv.appendChild(repoNameDiv);
+            textDiv.appendChild(repoTypeDiv);
 
-        card.appendChild(textDiv);
-        card.appendChild(descriptionDiv);
+            card.appendChild(textDiv);
+            card.appendChild(descriptionDiv);
 
-        const reposList = document.getElementById('repos-list');
-        reposList.appendChild(card);
+            const reposList = document.getElementById('repos-list');
+            reposList.appendChild(card);
+        }
     });
 });
+
+// Copyright Year
+document.getElementById('copyright').innerHTML = `&copy; ${new Date().getFullYear()} Lawrence Garcia`;

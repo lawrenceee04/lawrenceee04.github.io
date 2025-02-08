@@ -1,16 +1,18 @@
 import { Octokit } from 'octokit';
 
-export const handler = async () => {
+export const handler = async (event) => {
     const octokit = new Octokit({
         auth: process.env.VITE_GITHUB_API_KEY,
     });
+
+    const numOfRepos = event.headers.numOfRepos;
 
     try {
         const response = await octokit.request('GET /user/repos', {
             headers: {
                 'X-GitHub-Api-Version': '2022-11-28',
             },
-            per_page: 100,
+            sort: 'updated',
         });
         return {
             statusCode: 200,
