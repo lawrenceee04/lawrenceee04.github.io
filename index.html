@@ -37,18 +37,18 @@
         </section>
 
         <!-- Socials -->
-        <section id="socials" class="flex flex-col text-center border-t border-b p-5 my-4 shadow-md">
+        <section
+            id="socials"
+            class="place-self-center flex flex-col text-center border w-sm sm:w-5xl p-5 my-4 shadow-md">
             <div class="text-2xl">socials</div>
-            <div class="text-xs font-light italic">swipe left and right</div>
-            <div
-                id="socials-list"
-                class="flex overflow-x-auto no-scrollbar scrolling-auto snap-x snap-mandatory gap-14 place-self-center text-center scroll-smooth w-3/4 h-32 m-4"></div>
+            <div id="socials-list" class="flex flex-wrap place-self-center text-center justify-center w-3/4 m-4"></div>
         </section>
 
-        <section class="place-self-center justify-start w-sm sm:w-4/5 flex flex-col md:flex-row gap-4 mb-4">
+        <section class="place-self-center justify-start w-sm sm:w-4/5 flex flex-col xl:flex-row gap-4 mb-4">
             <!-- Certifications -->
-            <div id="motto" class="flex flex-col border p-4 rounded text-center items-center md:w-3/10 shadow-md">
+            <div id="motto" class="flex flex-col border p-4 rounded text-center items-center xl:w-3/10 shadow-md">
                 <div class="text-2xl">certifications</div>
+                <div class="text-xs font-light italic">badges</div>
                 <div class="flex flex-col my-2">
                     <div id="badges">
                         <div
@@ -157,11 +157,10 @@
             </div>
 
             <!-- Projects -->
-            <div
-                id="projects"
-                class="flex flex-col gap-4 border p-4 rounded text-center items-center md:w-7/10 shadow-md">
+            <div id="projects" class="flex flex-col border p-4 rounded text-center items-center md:w-7/10 shadow-md">
                 <div class="text-2xl">projects</div>
-                <div id="repos-list" class="grid grid-cols-1 md:grid-cols-3 self-stretch gap-4 text-start"></div>
+                <div class="text-xs font-light italic">repositories</div>
+                <div id="repos-list" class="grid grid-cols-1 xl:grid-cols-2 self-stretch gap-4 text-start my-2"></div>
             </div>
         </section>
 

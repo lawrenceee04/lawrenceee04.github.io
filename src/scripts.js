@@ -45,7 +45,7 @@ getVerifiedAccounts('lawrencegarciaaa').then((verifiedAccounts) => {
         card.href = account.url;
         card.target = '_blank';
         card.className =
-            'flex flex-col snap-center border shrink-0 w-full sm:w-1/4 justify-center items-center text-lg md:text-2xl rounded hover:bg-sky-300 hover:drop-shadow-sm hover:text-2xl transition-transform';
+            'w-full lg:w-1/4 p-4 justify-center self-center items-center text-lg rounded hover:bg-sky-300 hover:drop-shadow-sm hover:text-2xl transition-transform';
         card.id = `social-${index}`;
 
         // set text
