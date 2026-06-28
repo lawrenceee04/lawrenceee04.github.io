@@ -1,11 +1,7 @@
 const getAvatarUrl = async (profileIdentifier) => {
     try {
-        const response = await fetch('/.netlify/functions/gravatarAPI', {
+        const response = await fetch(`/api/gravatar?profileIdentifier=${encodeURIComponent(profileIdentifier)}`, {
             method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                profileIdentifier: profileIdentifier,
-            },
         });
         const data = await response.json();
         const avatar_url = `${data.avatar_url}?s=300`;
@@ -19,12 +15,8 @@ const getAvatarUrl = async (profileIdentifier) => {
 
 const getVerifiedAccounts = async (profileIdentifier) => {
     try {
-        const response = await fetch('/.netlify/functions/gravatarAPI', {
+        const response = await fetch(`/api/gravatar?profileIdentifier=${encodeURIComponent(profileIdentifier)}`, {
             method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                profileIdentifier: profileIdentifier,
-            },
         });
         const data = await response.json();
         const verified_accounts = data.verified_accounts;
@@ -61,12 +53,8 @@ getVerifiedAccounts('lawrencegarciaaa').then((verifiedAccounts) => {
 // GitHub Repositories
 const getGitHubRepos = async (numOfRepos) => {
     try {
-        const response = await fetch('/.netlify/functions/githubAPI', {
+        const response = await fetch(`/api/github?numOfRepos=${encodeURIComponent(numOfRepos)}`, {
             method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                numOfRepos: numOfRepos,
-            },
         });
         const data = await response.json();
         return data;
